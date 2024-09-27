@@ -1,3 +1,15 @@
+<!-- TODO:
+	- look into a client side autocomplete solution
+	- implement a debounce function
+	- implement local caching for api calls and NOT images/sprites (they already have	a cache-control header)
+	- add pixelated font or three
+  √ add extra elements to page for non API info, or extra info not required to pass certification
+  - add CSS doodle below pokemon name like the gen 2 stat screens (maybe do something with canvas?)
+	X research the name/form problem (i.e.: Nidoran returns nothing, ust be nidoran-m 		or -f, what to do about pokemon with multiple forms (dropdown list? alert user to sepcify input?)
+		Optional features:
+	- add a "Shiny Sprite" option/button
+	- add options to change layout of page to different generations stat screens-->
+
 <!DOCTYPE html>
 <html lang="en">
  <head>
@@ -5,29 +17,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>PokéSearch App</title>
 	<link rel="stylesheet" href="styles.css" />
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
+	</style>
 </head>
 <body>
-  <input id="search-input" placeholder="Type the name or ID of a Pokémon here"></input>
-  <button id="search-button">Search</button>
-	<span id="pokeon-information-container">
-		<div id="sprite-container"></div>
-		<div id="basic-info">
-			<h4 id="pokemon-id" class="basic-info"></h4>
-			<h1 id="pokemon-name" class="basic-info"></h1>
-		</div>
-		<div id="stats-container-left">
-			<div id="hp" class="stats-list"></div>
-			<div id="weight" class="measurements"></div>
-			<div id="height" class="measurements"></div>
-			<div id="types" class="types"></div>
-		</div>
-		<div id="stats-container-right">
-			<div id="attack" class="stats-list"></div>
-			<div id="defense" class="stats-list"></div>
-			<div id="special-attack" class="stats-list"></div>
-			<div id="special-defense" class="stats-list"></div>
-			<div id="speed" class="stats-list"></div>
-		</div>
+	<span id="pokemon-information-container">
 	</span>
   <script src="./script.js"></script>
 </body>
