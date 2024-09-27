@@ -1,56 +1,118 @@
+body {
+	margin: 0;
+  font-family: "Tiny5", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 p {
 	margin: 2px 10px;
 }
 
-#pokeon-information-container {
-  display: grid;
-	grid-template-columns: repeat(2, auto);
-	grid-template-rows: repeat(2, auto);
+#flex-container {
+	display: flex;
+	flex-wrap: wrap;
+	height: 100%;
+	width: 100%;
+}
+
+.flex-row {
+	display: flex;
+	width: 100%;
+}
+
+#pokemon-information-container {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+#search-settings-container {
+	justify-self: center;
+	align-self: center;
+	grid-column: 1/3;
+	grid-row: 1/2;
+	position: relative;
+	top: 0;
 }
 
 #sprite-container {
 	border-bottom: 2px solid black;
+	min-width: 200px;
 	display: grid;
 	grid-column: 1/2;
-	grid-row: 1/2;
+	grid-row: 2/3;
+	position: relative;
+	left: 0;
+	flex: 1 1 auto;
 }
 
 #sprite {
-	justify-self: center;width: 200px;
-	height: auto;
+	justify-self: center;
+	align-self: center;
+	image-rendering: pixelated;
+	width: auto;
+	height: 100%;
 }
 
 #basic-info {
+	padding: 0 5vw 0 5vw;
+	display: flex;
+	flex-direction: column;
 	border-bottom: 2px solid black;
 	grid-column: 2/3;
-	grid-row: 1/2;
+	grid-row: 2/3;
+	position: relative;
+	right: 0;
+	flex: 1 1 auto;
+}
+
+#hp-row {
+	display: flex;
+	justify-content: flex-end;
 }
 
 #stats-container-left {
 	border-right: 2px solid black;
 	border-top: 1px solid white;
 	grid-column: 1/2;
-	grid-row: 2/3;
+	grid-row: 3/4;
 	background: #88f8f8;
+	position: relative;
+	bottom: 0;
+	left: 0;
+	flex: 1 1 auto;
 }
 
 #stats-container-right {
 	border-top: 1px solid white;
 	border-left: 3px solid black;
 	grid-column: 2/3;
-	grid-row: 2/3;
+	grid-row: 3/4;
 	background: #88f8f8;
+	position: relative;
+	right: 0;
+	bottom: 0;
+	flex: 1 1 auto;
+}
+
+.container {
+	display: grid;
 }
 
 .stat-name {
+	justify-self: start;
 }
 
 .stat-value {
+	display: inline-block;
 	font-weight: bold;
 	justify-self: end;
 }
 
-#types {
-	display: grid;
+#types-info {
+	display: flex;
+	align-items: center;
 	justify-content: center;
 }
